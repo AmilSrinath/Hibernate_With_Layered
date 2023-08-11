@@ -10,7 +10,7 @@ public interface CustomerBO extends SuperBO {
     public List<CustomerDTO> getAllCustomer();
     public boolean addCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException;
 
-    public boolean updateCustomer(CustomerDTO dto);
+    public boolean updateCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException;
 
-    public boolean deleteCustomer(String id);
+    public boolean deleteCustomer(String id) throws SQLException, ClassNotFoundException;
 }

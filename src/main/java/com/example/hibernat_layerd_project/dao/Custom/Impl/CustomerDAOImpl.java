@@ -23,13 +23,16 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
     @Override
-    public boolean update(Customer entity) {
-        return false;
+    public boolean update(Customer customer) throws SQLException {
+        return SQLUtil.execute("UPDATE Customer SET Name = ?,Age = ? WHERE ID = ?",
+                customer.getName(),
+                customer.getAge(),
+                customer.getId());
     }
 
     @Override
-    public boolean delete(String id) {
-        return false;
+    public boolean delete(String id) throws SQLException {
+        return SQLUtil.execute("DELETE FROM customer WHERE ID = ?",id);
     }
 
     @Override
